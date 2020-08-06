@@ -1,0 +1,87 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Input-container{
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notes-container{
+    width: 95%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* MODAL */
+.modal-form{
+    background: #f3b53aec;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px ;
+    margin-top: 20px;
+}
+
+.modal-input{
+    width: 60%;
+    padding: 10px 8px;
+    margin: 14px 0;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid #3f3e3e;
+}
+
+.modal-form-heading{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: brown;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.modal-close-button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background: #E71C23;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.modal-update-button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background: #218F76;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-input{
+        width: 80%;
+    }
+  }
