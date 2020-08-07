@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 const path = require('path');
 
-const PORT = process.env.PORT ||  process.env.NODE_PORT || 8000;
+const PORT = process.env.PORT ||  process.env.NODE_PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -24,7 +24,8 @@ else{
 mongoose.connect( process.env.MONGODB_URL ,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
-    useCreateIndex:true
+    useCreateIndex:true,
+    useFindAndModify: true
 },() => console.log(`MongoDB connected`));
 
 app.use('/api/notes', notesRoutes);

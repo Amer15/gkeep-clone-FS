@@ -31,7 +31,7 @@ class MainPage extends Component {
 
     //GET NOTES FROM DB
     componentDidMount() {
-        axios.get('/')
+        axios.get('api/notes')
             .then(response => {
                 // console.log(response.data);
                 const fetchedNotes = response.data.notes;
@@ -65,9 +65,9 @@ class MainPage extends Component {
             body
         }
 
-        axios.post('/add-note', notesData)
+        axios.post('api/notes/add-note', notesData)
             .then(response => {
-                console.log(response.data.message);
+                // console.log(response.data.message);
                 const newNotes = [...this.state.notes];
                 newNotes.push(response.data.note);
 
@@ -88,9 +88,9 @@ class MainPage extends Component {
     }
 
     deleteNoteHandler = (id) => {
-        axios.delete(`/delete-note/${id}`)
+        axios.delete(`api/notes/delete-note/${id}`)
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 const notes = [...this.state.notes];
 
                 const filteredNotes = notes.filter(note => note._id !== id);
@@ -144,7 +144,7 @@ class MainPage extends Component {
     }
 
     modalInputChange = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         let newEditableNoteObj = {...this.state.editNoteObj};
         newEditableNoteObj[e.target.name] = e.target.value;
         this.setState({
@@ -172,7 +172,7 @@ class MainPage extends Component {
             body: this.state.editNoteObj.body
         }
 
-        axios.put(`/update-note/${id}`, updatedNote)
+        axios.put(`api/notes/update-note/${id}`, updatedNote)
         .then( response => {
            console.log(response.data.message);
         })
